@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import '../styles/AboutSection.css';
 import Header from './Header';
 import Footer from './Footer';
-import ServicesSection from './ServicesSection';
 import Doctors from './Doctors';
 
 const pic1 = process.env.PUBLIC_URL + '/b1.jpg';

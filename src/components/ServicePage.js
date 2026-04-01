@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import '../styles/ServicePage.css';
 import Header from './Header';
 import Footer from './Footer';
-import ServicesSection from './ServicesSection';
+
 
 const background = process.env.PUBLIC_URL + '/service-back.jpg';
 const pic1 = process.env.PUBLIC_URL + '/s1.jpg';
