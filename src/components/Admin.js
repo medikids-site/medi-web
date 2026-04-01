@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import "../styles/Admin.css";
 
 function Admin() {
-  const navigate = useNavigate();
-  
   // --- State Variables ---
   const [files, setFiles] = useState([]);
   const [section, setSection] = useState("doctors");
@@ -19,6 +16,7 @@ function Admin() {
   
   // Partner fields
   const [partnerName, setPartnerName] = useState("");
+  const [partnerLink, setPartnerLink] = useState("");
   
   // Review fields
   const [reviewerName, setReviewerName] = useState("");
@@ -52,6 +50,7 @@ function Admin() {
     setTitle("");
     setContent("");
     setPartnerName("");
+    setPartnerLink("");
     setReviewerName("");
     setReviewNote("");
     setFiles([]);
@@ -100,8 +99,6 @@ function Admin() {
 
   // --- File Upload Logic ---
   const handleUpload = async () => {
-    const fieldInfo = getFieldInfo();
-
     // Validation based on section
     if (section === "doctors") {
       if (!files || files.length === 0) {
@@ -178,6 +175,9 @@ function Admin() {
         if (partnerName.trim()) {
           formData.append("name", partnerName.trim());
         }
+        if (partnerLink.trim()) {
+          formData.append("link", partnerLink.trim());
+        }
       } else if (section === "reviews") {
         endpoint = `${API_BASE_URL}/reviews/upload`;
         formData.append("note", reviewNote.trim());
@@ -209,6 +209,7 @@ function Admin() {
         setTitle("");
         setContent("");
         setPartnerName("");
+        setPartnerLink("");
         setReviewerName("");
         setReviewNote("");
         
@@ -244,7 +245,6 @@ function Admin() {
       }
       const data = await res.json();
       
-      // Extract items based on section
       const itemsArray = data.doctors || data.news || data.partners || data.reviews || [];
       setItems(itemsArray);
     } catch (err) {
@@ -313,7 +313,6 @@ function Admin() {
     loadStats();
   }, [loadStats]);
 
-  // Get field info
   const fieldInfo = getFieldInfo();
 
   // Section names mapping
@@ -471,6 +470,21 @@ function Admin() {
               </small>
             </div>
             <div className="form-group">
+              <label className="form-label">Website Link (Optional):</label>
+              <input
+                type="url"
+                value={partnerLink}
+                onChange={(e) => setPartnerLink(e.target.value)}
+                disabled={isUploading}
+                className="form-input"
+                placeholder="https://www.partnerwebsite.com"
+                maxLength={500}
+              />
+              <small style={{ color: '#666', display: 'block', marginTop: '5px' }}>
+                💡 Link is optional. Used to make the logo clickable.
+              </small>
+            </div>
+            <div className="form-group">
               <label className="form-label">{fieldInfo.imageLabel} *:</label>
               <input
                 type="file"
@@ -542,6 +556,7 @@ function Admin() {
             {items.map((item) => {
               let displayTitle = "";
               let displayDescription = "";
+              let displayLink = "";
               let mediaUrl = null;
               
               if (section === "doctors") {
@@ -555,6 +570,7 @@ function Admin() {
               } else if (section === "partners") {
                 displayTitle = item.name || "Partner Logo";
                 displayDescription = "";
+                displayLink = item.link || "";
                 mediaUrl = item.logoUrl;
               } else if (section === "reviews") {
                 displayTitle = item.name || "Anonymous";
@@ -590,6 +606,12 @@ function Admin() {
                           ? `${displayDescription.substring(0, 150)}...`
                           : displayDescription
                         }
+                      </p>
+                    )}
+
+                    {displayLink && (
+                      <p className="item-description">
+                        🔗 <a href={displayLink} target="_blank" rel="noopener noreferrer">{displayLink}</a>
                       </p>
                     )}
 
