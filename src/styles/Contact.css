@@ -1,0 +1,211 @@
+/* Contact Section */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Georgian:wght@100..900&display=swap');
+/* Services Section */
+
+.contact {
+  width: 100%;
+  min-height: 90px;
+  background: linear-gradient(135deg, #696FC7 0%, #8F87F1 50%, #483AA0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  font-family: 'montserrat', sans-serif;
+}
+
+@media (max-width: 920px) {
+  .contact {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .contact {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Container */
+.contact-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+@media (max-width: 920px) {
+  .contact-container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Contact Info Grid */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact Item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  position: relative;
+  min-height: 90px;
+}
+
+/* Vertical dividing line between items */
+.contact-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .contact-item {
+    padding: 1.2rem 1rem;
+    min-height: auto;
+  }
+
+  /* Remove right border on even items (2nd and 4th) on tablet */
+  .contact-item:nth-child(2n)::after {
+    display: none;
+  }
+
+  /* Add bottom border on first two items */
+  .contact-item:nth-child(1),
+  .contact-item:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-item:not(:last-child)::after {
+    display: block;
+  }
+}
+
+@media (max-width: 540px) {
+  .contact-item {
+    padding: 1rem;
+    gap: 0.6rem;
+  }
+
+  /* Remove all right borders on mobile */
+  .contact-item::after {
+    display: none !important;
+  }
+
+  /* Add bottom border to all items except last */
+  .contact-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Emoji */
+.contact-emoji {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+@media (max-width: 540px) {
+  .contact-emoji {
+    font-size: 1.5rem;
+  }
+}
+
+/* Details */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.contact-label {
+  font-family: 'montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 540px) {
+  .contact-label {
+    font-size: 0.75rem;
+  }
+}
+
+.contact-value {
+  font-family: 'montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: opacity 0.3s ease;
+}
+
+.contact-value:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 540px) {
+  .contact-value {
+    font-size: 0.9rem;
+  }
+}
+
+/* Link Styling */
+.contact-link {
+  font-family: 'montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+  margin-top: 0.2rem;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+}
+
+
+@media (max-width: 540px) {
+  .contact-link {
+    font-size: 0.7rem;
+  }
+}
+
+/* Phone and Email Links */
+a.contact-value {
+  cursor: pointer;
+}
+
+a.contact-value:hover {
+  text-decoration: underline;
+}

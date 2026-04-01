@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Georgian:wght@100..900&display=swap');
+
+.logos-container {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: #ffffff;
+  font-family: 'montserrat', sans-serif;
+}
+
+@media (max-width: 920px) {
+  .logos-container {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .logos-container {
+    padding: 2rem 0;
+  }
+}
+
+.logos-loading {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #666;
+  padding: 60px 0;
+  font-family: 'montserrat', sans-serif;
+}
+
+.logos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2.5rem;
+}
+
+@media (max-width: 920px) {
+  .logos-header {
+    padding: 0 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .logos-header {
+    margin-bottom: 2rem;
+  }
+}
+
+.logos-title {
+  font-family: 'Noto Sans Georgian', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #483AA0;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.02rem;
+}
+
+@media (max-width: 920px) {
+  .logos-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .logos-title {
+    font-size: 1.8rem;
+  }
+}
+
+.logos-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem 2rem;
+  align-items: center;
+}
+
+@media (max-width: 920px) {
+  .logos-grid {
+    padding: 0 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100px;
+  box-shadow: 0 2px 8px rgba(72, 58, 160, 0.08);
+}
+
+.logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(72, 58, 160, 0.15);
+  background: #ffffff;
+}
+
+@media (max-width: 540px) {
+  .logo-item {
+    height: 90px;
+    padding: 0.8rem;
+  }
+}
+
+.logo-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: filter 0.3s ease;
+}
+
+.logo-item:hover .logo-image {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Optional: Add subtle animation on load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-item {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.logo-item:nth-child(1) { animation-delay: 0.05s; }
+.logo-item:nth-child(2) { animation-delay: 0.1s; }
+.logo-item:nth-child(3) { animation-delay: 0.15s; }
+.logo-item:nth-child(4) { animation-delay: 0.2s; }
+.logo-item:nth-child(5) { animation-delay: 0.25s; }
+.logo-item:nth-child(6) { animation-delay: 0.3s; }
+.logo-item:nth-child(7) { animation-delay: 0.35s; }
+.logo-item:nth-child(8) { animation-delay: 0.4s; }
+
+/* ── Skeleton loading ── */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #ede9f7 25%,
+    #ddd6f3 50%,
+    #ede9f7 75%
+  );
+  background-size: 1200px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: 6px;
+}
+
+.skeleton-logo-title {
+  height: 34px;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.skeleton-logo-item {
+  height: 100px;
+  border-radius: 12px;
+}
+
+@media (max-width: 540px) {
+  .skeleton-logo-item {
+    height: 90px;
+  }
+}

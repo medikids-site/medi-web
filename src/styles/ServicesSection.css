@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Georgian:wght@100..900&display=swap');
+/* Services Section */
+
+
+.services-section {
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  font-family: 'montserrat', sans-serif;
+}
+
+/* Purple Overlay (same as landing) */
+.services-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(72, 58, 160, 0.7) 0%,
+    rgba(105, 111, 199, 0.6) 50%,
+    rgba(143, 135, 241, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+@media (max-width: 920px) {
+  .services-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .services-section {
+    padding: 3rem 0;
+  }
+}
+
+/* Container */
+.services-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 920px) {
+  .services-container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Section Title */
+.services-title {
+  font-family: 'montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 920px) {
+  .services-title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .services-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* Service Card - Transparent with Glassmorphism */
+.service-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.2rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+/* Decorative circle */
+.service-card::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -75px;
+  right: -50px;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.service-card:hover::before {
+  transform: scale(1.5);
+  opacity: 0.5;
+}
+
+@media (max-width: 920px) {
+  .service-card {
+    padding: 2rem 1.5rem;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 540px) {
+  .service-card {
+    padding: 2rem 1.5rem;
+    min-height: 220px;
+  }
+}
+/* Service Icon */
+.service-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.239)) 
+          drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon img {
+  transform: scale(1.15);
+  filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.06));
+}
+
+@media (max-width: 920px) {
+  .service-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 540px) {
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Service Number */
+.service-number {
+  font-family: 'montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  z-index: 1;
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 920px) {
+  .service-number {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .service-number {
+    font-size: 1.6rem;
+  }
+}
+
+/* Service Title */
+.service-title {
+  font-family: 'montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0;
+  z-index: 1;
+  text-shadow: 1px 2px 4px rgba(203, 203, 203, 0.2);
+}
+
+@media (max-width: 920px) {
+  .service-title {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 540px) {
+  .service-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+/* Responsive adjustments for better spacing */
+@media (max-width: 1280px) {
+  .services-grid {
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 2.2rem 1.8rem;
+  }
+}
