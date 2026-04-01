@@ -57,16 +57,25 @@ function Logos({ language }) {
 
       <div className="logos-grid">
         {partners.map((partner) => (
-          <div key={partner._id} className="logo-item">
-            <img 
-              src={partner.logoUrl} 
-              alt={partner.name || 'Partner logo'}
-              className="logo-image"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-          </div>
+         <div key={partner._id} className="logo-item">
+  {partner.link ? (
+    <a href={partner.link} target="_blank" rel="noopener noreferrer">
+      <img 
+        src={partner.logoUrl} 
+        alt={partner.name || 'Partner logo'}
+        className="logo-image"
+        onError={(e) => { e.target.style.display = 'none'; }}
+      />
+    </a>
+  ) : (
+    <img 
+      src={partner.logoUrl} 
+      alt={partner.name || 'Partner logo'}
+      className="logo-image"
+      onError={(e) => { e.target.style.display = 'none'; }}
+    />
+  )}
+</div>
         ))}
       </div>
     </div>
