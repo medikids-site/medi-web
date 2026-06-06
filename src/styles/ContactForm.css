@@ -360,3 +360,54 @@
     margin-bottom: 0.4rem;
   }
 }
+
+/* DATE INPUT iOS FIX - add this to your existing ContactForm.css */
+
+.form-input[type="date"] {
+  color: #333;
+  -webkit-text-fill-color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-height: 3.2rem;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit {
+  color: #333;
+  -webkit-text-fill-color: #333;
+  padding: 0;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  color: #333;
+  -webkit-text-fill-color: #333;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit-text {
+  color: #333;
+  -webkit-text-fill-color: #333;
+  padding: 0 2px;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit-month-field,
+.form-input[type="date"]::-webkit-datetime-edit-day-field,
+.form-input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #333;
+  -webkit-text-fill-color: #333;
+}
+
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0.4rem;
+  margin-left: auto;
+}
+
+@media (max-width: 540px) {
+  .form-input[type="date"] {
+    padding: 0.9rem 0.8rem;
+    font-size: 0.9rem;
+    max-width: 100%;
+    min-height: 3rem;
+  }
+}

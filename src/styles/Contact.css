@@ -209,3 +209,17 @@ a.contact-value {
 a.contact-value:hover {
   text-decoration: underline;
 }
+/* Add this to your Contact.css */
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}

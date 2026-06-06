@@ -9,7 +9,7 @@ const pic1 = process.env.PUBLIC_URL + '/b1.jpg';
 function AboutSection({ language, setLanguage }) {
   const translations = {
     ge: {
-      title: 'ჩვენს შესახებ',
+      title: 'ჩვენ შესახებ',
       description1: 'ჩვენი გუნდი მზად არის ნებისმიერ დროს გაუწიოს თქვენს პატარას პროფესიონალური, სწრაფი და საიმედო სამედიცინო დახმარება.',
       description2: 'ჩვენ ვმუშობთ 24/7 – რადგან თქვენს შვილებს ყოველთვის ჰქონდეთ მაღალი სტანდარტის პედიატრიული სასწრაფო დახმარება.'
     },
