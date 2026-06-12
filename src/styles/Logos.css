@@ -72,70 +72,96 @@
 }
 
 .logos-grid {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem 2rem;
-  align-items: center;
+  gap: 2.5rem;
+  align-items: stretch;
 }
 
 @media (max-width: 920px) {
   .logos-grid {
     padding: 0 1.25rem;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (max-width: 540px) {
   .logos-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1rem;
+    gap: 1.25rem;
   }
 }
 
+/* ── ჩარჩო/Card ── */
 .logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  height: 100px;
-  box-shadow: 0 2px 8px rgba(72, 58, 160, 0.08);
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e8e6f0;
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  height: 160px;
+  box-shadow: 0 4px 16px rgba(72, 58, 160, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(72, 58, 160, 0.04), rgba(72, 58, 160, 0));
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .logo-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(72, 58, 160, 0.15);
-  background: #ffffff;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(72, 58, 160, 0.18);
+  border-color: #483AA0;
+}
+
+.logo-item:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 920px) {
+  .logo-item {
+    height: 140px;
+  }
 }
 
 @media (max-width: 540px) {
   .logo-item {
-    height: 90px;
-    padding: 0.8rem;
+    height: 120px;
+    padding: 1.2rem;
+    border-radius: 14px;
   }
 }
 
+/* ── ფერადი ლოგო (filter ამოღებულია) ── */
 .logo-image {
   max-width: 100%;
   max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.7);
-  transition: filter 0.3s ease;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.35s ease;
 }
 
 .logo-item:hover .logo-image {
-  filter: grayscale(0%) opacity(1);
+  transform: scale(1.06);
 }
 
-/* Optional: Add subtle animation on load */
+/* ── ანიმაცია ჩატვირთვაზე ── */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -187,13 +213,13 @@
 }
 
 .skeleton-logo-item {
-  height: 100px;
-  border-radius: 12px;
+  height: 160px;
+  border-radius: 16px;
 }
 
 @media (max-width: 540px) {
   .skeleton-logo-item {
-    height: 90px;
+    height: 120px;
   }
 }
 
@@ -203,4 +229,6 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 1;
 }

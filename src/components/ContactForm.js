@@ -83,9 +83,9 @@ function ContactForm({ language }) {
           {/* Header with Title and Phone */}
           <div className="contact-form-header">
             <h2 className="contact-form-title">{t.title}</h2>
-            <a href="tel:16911" className="contact-form-phone">
-              📞 {t.subtitle}
-            </a>
+          <a href="tel:+995322227171" className="contact-form-phone">
+  📞 {t.subtitle}
+</a>
           </div>
 
           {/* Description */}
