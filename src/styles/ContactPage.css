@@ -158,16 +158,42 @@
   }
 }
 
-/* Contact Info Icon */
+/* Contact Info Icon — now a circular badge holding an SVG */
 .contact-info-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #696FC7 0%, #8F87F1 50%, #483AA0 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(72, 58, 160, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover .contact-info-icon {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(72, 58, 160, 0.35);
+}
+
+.contact-info-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
 }
 
 @media (max-width: 540px) {
   .contact-info-icon {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0.9rem;
+  }
+
+  .contact-info-icon svg {
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -256,10 +282,6 @@
     height: 350px;
   }
 }
-
-
-
-
 
 /* Map Header Section */
 .contact-map-header {
@@ -354,12 +376,21 @@
 }
 
 .map-address-icon {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.map-address-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 @media (max-width: 540px) {
-  .map-address-icon {
-    font-size: 1.3rem;
+  .map-address-icon svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
